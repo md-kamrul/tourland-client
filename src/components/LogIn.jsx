@@ -104,7 +104,7 @@ const LogIn = () => {
     }
     const [showPassword, setShowPassword] = useState(false);
 
-    document.title = "Lavishy - LogIn"
+    document.title = "TourLand - LogIn"
     return (
         <div className="bg-[url('/src/assets/loginBG.png')] w-full h-full bg-cover pb-4">
 
