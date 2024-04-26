@@ -16,7 +16,7 @@ const Navbar = () => {
 
     return (
         <div className="pt-5">
-            <div className="navbar bg-[#f8fbffb2] border border-[#f8fbff] text-[#000e25] rounded-lg w-[90%] md:w-[80%] mx-auto">
+            <div className="navbar bg-[#f8fbff] border border-[#f8fbff] text-[#000e25] rounded-lg w-[90%] md:w-[80%] mx-auto bg-opacity-50">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,7 +38,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <div className="form-control">
                         <label className="label cursor-pointer">
-                            <input type="checkbox" className="toggle" data-tooltip-id="my-tooltip-inline" data-tooltip-content="Mode" />
+                            <input type="checkbox" className="toggle" data-tooltip-id="my-tooltip-inline" data-tooltip-content="Mode" checked />
                             <Tooltip
                                 id="my-tooltip-inline"
                                 style={{ backgroundColor: "#000e25", color: "#f8fbff" }}
