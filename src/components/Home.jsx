@@ -17,6 +17,16 @@ const Home = () => {
 
             </div>
 
+            {/* newsletter section */}
+            <div className="bg-[#000e25] text-[#f8fbff] w-full py-24 text-center font-semibold">
+                <div className="bg-[url('/src/assets/newsletter.jpg')] bg-cover w-[80%] mx-auto py-24 rounded-lg">
+                    Do not miss out the latest in the world of travel! Subscribe to <br />our newsletter and let the adventures begin!
+                    <div>
+                        <button className="bg-[#f8fbff] border border-[#f8fbff] text-[#000e25] rounded-lg mt-5 bg-opacity-50 px-5 py-3 font-bold">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
             {/* FAQ section */}
             <div className="bg-[#000e25] text-[#f8fbff]">
                 <div className="w-[80%] mx-auto py-24">
