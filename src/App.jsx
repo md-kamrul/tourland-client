@@ -7,9 +7,14 @@ function App() {
   return (
     <>
       
-      {/* navbar */}
-      <Navbar></Navbar>
-      
+      {/* hero */}
+      <div className='bg-[url("/src/assets/heroBG.jpg")] w-full h-screen'>
+
+        {/* navbar */}
+        <Navbar></Navbar>
+
+      </div>
+
       <Outlet></Outlet>
 
     </>
