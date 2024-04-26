@@ -1,5 +1,6 @@
 import { CgProfile } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
+import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
 
@@ -35,9 +36,13 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="form-control tooltip" data-tip="Mode">
+                    <div className="form-control">
                         <label className="label cursor-pointer">
-                            <input type="checkbox" className="toggle" />
+                            <input type="checkbox" className="toggle" data-tooltip-id="my-tooltip-inline" data-tooltip-content="Mode" />
+                            <Tooltip
+                                id="my-tooltip-inline"
+                                style={{ backgroundColor: "#000e25", color: "#f8fbff" }}
+                            />
                         </label>
                     </div>
                 </div>
