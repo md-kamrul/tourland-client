@@ -154,7 +154,7 @@ const Register = () => {
     document.title = "TourLand - Register"
 
     return (
-        <div className="bg-[url('/src/assets/registerBG.jpg')] w-full h-full bg-cover pb-4">
+        <div className="bg-[url('/src/assets/registerBG.jpg')] w-full h-full bg-cover pb-5">
 
             <Navbar></Navbar>
 

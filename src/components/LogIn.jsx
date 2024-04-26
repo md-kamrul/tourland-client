@@ -106,7 +106,7 @@ const LogIn = () => {
 
     document.title = "TourLand - LogIn"
     return (
-        <div className="bg-[url('/src/assets/loginBG.png')] w-full h-full bg-cover pb-4">
+        <div className="bg-[url('/src/assets/loginBG.png')] w-full h-full bg-cover pb-5">
 
             <Navbar></Navbar>
 
