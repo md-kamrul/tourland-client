@@ -6,16 +6,15 @@ const Home = () => {
     document.title = "TourLand"
 
     return (
-        <div className="bg-[url('/src/assets/heroBG.jpg')] w-full h-screen">
+        <div>
+            <div className="bg-[url('/src/assets/heroBG.jpg')] w-full h-screen">
 
-            <Navbar></Navbar>
+                <Navbar></Navbar>
 
-            {/* hero section */}
-            <Hero></Hero>
-            <div>
+                {/* hero section */}
+                <Hero></Hero>
 
             </div>
-
         </div>
     );
 };
