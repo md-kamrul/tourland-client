@@ -1,14 +1,116 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { IoMdEyeOff } from "react-icons/io";
+import { useContext, useState } from "react";
+import { AuthContext } from "../firebase/AuthProvider";
+import { getAuth, signInWithPopup, GoogleAuthProvider, TwitterAuthProvider } from "firebase/auth";
+import Swal from 'sweetalert2'
+import app from "../firebase/firebase.config";
+import Navbar from "./Navbar";
 
 const LogIn = () => {
 
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleLogIn = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user;
+
+                Swal.fire({
+                    title: "Done!",
+                    text: `LogIn successfully...`,
+                    icon: "success"
+                }),
+
+                    navigate(
+                        location?.state ?
+                            location.state
+                            :
+                            "/"
+                    )
+            }).catch(() => {
+                Swal.fire({
+                    title: "Error!",
+                    text: `Something went wrong. Please try again...`,
+                    icon: "error"
+                })
+            });
+    }
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const email = form.get("email");
+        const password = form.get("password");
+
+        signIn(email, password)
+            .then(
+
+                Swal.fire({
+                    title: "Done!",
+                    text: `LogIn successfully...`,
+                    icon: "success"
+                }),
+
+                navigate(
+                    location?.state ?
+                        location.state
+                        :
+                        "/"
+                )
+            )
+            .catch(() => {
+                Swal.fire({
+                    title: "Error!",
+                    text: `Please enter valid email and password...`,
+                    icon: "error"
+                })
+            })
+    }
+
+    const providerTwitter = new TwitterAuthProvider();
+    const handleTwitterRegister = () => {
+        signInWithPopup(auth, providerTwitter)
+            .then((result) => {
+                const user = result.user;
+
+                Swal.fire({
+                    title: "Done!",
+                    text: `LogIn successfully...`,
+                    icon: "success"
+                }),
+
+                    navigate(
+                        location?.state ?
+                            location.state
+                            :
+                            "/"
+                    )
+            }).catch(() => {
+                Swal.fire({
+                    title: "Error!",
+                    text: `Something went wrong. Please try again...`,
+                    icon: "error"
+                })
+            });
+    }
+    const [showPassword, setShowPassword] = useState(false);
+
+    document.title = "Lavishy - LogIn"
     return (
-        <div>
-            <div className="md:w-[80%] mx-auto mt-8">
+        <div className="bg-[url('/src/assets/loginBG.png')] w-full h-full bg-cover pb-4">
+
+            <Navbar></Navbar>
+
+            <div className="w-[90%] md:w-[80%] mx-auto mt-8 bg-[#f8fbffb2] border border-[#f8fbff] text-[#000e25] rounded-lg pt-5">
                 <h2 className="text-center text-2xl font-bold">LogIn</h2>
                 <div className="card shrink-0 w-[80%] mx-auto">
                     <form onSubmit={handleLogin} className="card-body">
@@ -41,7 +143,7 @@ const LogIn = () => {
                             </div>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-[#00c867] border-[#00c867] hover:bg-transparent hover:text-[#00c867] hover:border-[#00c867] text-white">Login</button>
+                            <button className="btn bg-[#000e25] border border-[#f8fbff] text-[#f8fbff] hover:text-[#000e25] hover:border-[#000e25] hover:bg-transparent">Login</button>
                         </div>
                         <div>
                             <h2 className="mt-5 text-center md:text-xl">-------------  Or LogIn Using  -------------</h2>

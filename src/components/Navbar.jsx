@@ -1,5 +1,5 @@
 import { CgProfile } from "react-icons/cg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <div className="pt-5">
-            <div className="navbar bg-[#f8fbffb2] w-[80%] mx-auto rounded-lg border border-[#f8fbff] text-[#000e25]">
+            <div className="navbar bg-[#f8fbffb2] border border-[#f8fbff] text-[#000e25] rounded-lg w-[90%] md:w-[80%] mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,7 +25,9 @@ const Navbar = () => {
                             {navBar}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl bg-transparent hover:bg-transparent">
+                        <Link to="/">TourLand</Link>
+                    </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
