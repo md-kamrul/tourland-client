@@ -35,7 +35,7 @@ const Navbar = () => {
         }
         {
             user ?
-                <li><NavLink onClick={handleSignOut}>LogOut</NavLink></li>
+                <li><Link onClick={handleSignOut}>LogOut</Link></li>
                 :
                 <li><NavLink to="/login">LogIn</NavLink></li>
         }
