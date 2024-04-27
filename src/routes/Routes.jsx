@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/all_spot",
-                element: <PrivateRoute><AllSpot></AllSpot></PrivateRoute>
+                element: <AllSpot></AllSpot>
             },
             {
                 path: "/add_list",
