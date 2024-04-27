@@ -1,17 +1,50 @@
+import { useContext } from "react";
 import { CgProfile } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from 'react-tooltip'
+import { AuthContext } from "../firebase/AuthProvider";
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
     const navBar = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/all_spot">All Spot</NavLink></li>
-        <li><NavLink to="/add_list">Add List</NavLink></li>
-        <li><NavLink to="/my_list">My List</NavLink></li>
-        <li><NavLink to="/login">LogIn</NavLink></li>
-        <li><NavLink to="/register">Register</NavLink></li>
-        <li><NavLink to="/profile"><CgProfile className="text-3xl" /></NavLink></li>
+        {
+            user ?
+                <li><NavLink to="/all_spot">All Spot</NavLink></li>
+                :
+                <span></span>
+        }
+        {
+            user ?
+                <li><NavLink to="/add_list">Add List</NavLink></li>
+                :
+                <span></span>
+        }
+        {
+            user ?
+                <li><NavLink to="/my_list">My List</NavLink></li>
+                :
+                <span></span>
+        }
+        {
+            user ?
+                <li><NavLink onClick={handleSignOut}>LogOut</NavLink></li>
+                :
+                <li><NavLink to="/login">LogIn</NavLink></li>
+        }
+        {
+            user ?
+                <li><NavLink to="/profile"><CgProfile className="text-3xl" /></NavLink></li>
+                :
+                <li><NavLink to="/register">Register</NavLink></li>
+        }
     </>
 
     return (

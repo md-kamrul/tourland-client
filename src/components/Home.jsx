@@ -18,7 +18,7 @@ const Home = () => {
             </div>
 
             {/* newsletter section */}
-            <div className="bg-[#000e25] text-[#f8fbff] w-full py-24 text-center font-semibold">
+            <div className="bg-[#000e25] text-[#f8fbff] w-full pt-24 text-center font-semibold">
                 <div className="bg-[url('/src/assets/newsletter.jpg')] bg-cover w-[80%] mx-auto py-24 rounded-lg">
                     Do not miss out the latest in the world of travel! Subscribe to <br />our newsletter and let the adventures begin!
                     <div>
