@@ -8,6 +8,7 @@ import Profile from "../components/Profile";
 import MyList from "../components/MyList";
 import AllSpot from "../components/AllSpot";
 import AddList from "../components/AddList";
+import PrivateRoute from "../routes/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -29,19 +30,19 @@ const router = createBrowserRouter([
             },
             {
                 path: "/profile",
-                element: <Profile></Profile>
+                element: <PrivateRoute><Profile></Profile></PrivateRoute>
             },
             {
                 path: "/my_list",
-                element: <MyList></MyList>
+                element: <PrivateRoute><MyList></MyList></PrivateRoute>
             },
             {
                 path: "/all_spot",
-                element: <AllSpot></AllSpot>
+                element: <PrivateRoute><AllSpot></AllSpot></PrivateRoute>
             },
             {
                 path: "/add_list",
-                element: <AddList></AddList>
+                element: <PrivateRoute><AddList></AddList></PrivateRoute>
             }
         ]
     },
