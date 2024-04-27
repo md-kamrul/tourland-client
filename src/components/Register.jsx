@@ -158,7 +158,7 @@ const Register = () => {
 
             <Navbar></Navbar>
 
-            <div className="w-[90%] md:w-[80%] mx-auto mt-8 bg-[#f8fbffb2] border border-[#f8fbff] text-[#000e25] rounded-lg pt-5">
+            <div className="w-[90%] md:w-[80%] mx-auto mt-8 bg-[#f8fbff] border border-[#f8fbff] text-[#000e25] rounded-lg pt-5 bg-opacity-50">
                 <h2 className="text-center text-2xl font-bold">Register</h2>
                 <div className="card shrink-0 w-[80%] mx-auto">
                     <form onSubmit={handleRegister} className="card-body">
