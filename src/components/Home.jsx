@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import CountrySection from "./CountrySection";
 import FaqSection from "./FaqSection";
 import Navbar from "./Navbar";
+import ShowSpotList from "./ShowSpotList";
 
 const Home = () => {
 
@@ -17,6 +18,12 @@ const Home = () => {
                 <Hero></Hero>
 
             </div>
+
+            {/* tourist spot list section  */}
+            {/* <div className="bg-[#000e25] text-[#f8fbff] w-full pt-24 text-center font-semibold">
+                <h2 className="text-center text-2xl text-[#d7a31a] mb-10 font-bold">Tourist Spots</h2>
+                <ShowSpotList></ShowSpotList>
+            </div> */}
 
             {/* country section */}
             <div className="bg-[#000e25] text-[#f8fbff] w-full pt-24 text-center font-semibold">
