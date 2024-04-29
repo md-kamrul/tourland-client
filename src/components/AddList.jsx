@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Navbar from "./Navbar";
 import Swal from 'sweetalert2'
 
@@ -11,6 +10,7 @@ const AddList = () => {
 
         const form = event.target;
 
+        const email = form.email.value;
         const image = form.image.value;
         const shortDescription = form.shortDescription.value;
         const touristSpot = form.touristSpot.value;
@@ -21,7 +21,7 @@ const AddList = () => {
         const travelTime = form.travelTime.value;
         const totalVisitorPerYear = form.totalVisitorPerYear.value;
 
-        const addList = { image, shortDescription, touristSpot, country, location, averageCost, seasonality, travelTime, totalVisitorPerYear };
+        const addList = { email, image, shortDescription, touristSpot, country, location, averageCost, seasonality, travelTime, totalVisitorPerYear };
 
         console.log(addList);
 
@@ -56,6 +56,12 @@ const AddList = () => {
                     <h2 className="text-center text-2xl text-[#d7a31a] mb-10 font-bold">Add Tourist List</h2>
 
                     <form onSubmit={handleAddList} className="card-body">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text text-[#f8fbff]">Enter Your Email Address</span>
+                            </label>
+                            <input type="email" placeholder="Enter Your Email Address" className="input input-bordered" name="email" required />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-[#f8fbff]">Image</span>
