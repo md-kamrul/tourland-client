@@ -45,8 +45,6 @@ const Navbar = () => {
                             <CgProfile className="text-3xl" data-tooltip-id="my-tooltip-inline" data-tooltip-content={`${user.displayName}`} />
                     }
 
-                    {/* <CgProfile className="text-3xl" data-tooltip-id="my-tooltip-inline" data-tooltip-content={`${user.displayName}`} /> */}
-
                 </NavLink></li>
                 :
                 <li><NavLink to="/register">Register</NavLink></li>
