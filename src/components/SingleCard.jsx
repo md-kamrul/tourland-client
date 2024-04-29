@@ -2,10 +2,11 @@ import { FaLocationDot } from "react-icons/fa6";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { IoTimeSharp } from "react-icons/io5";
 import { BsPeopleFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const SingleCard = ({ signle_card }) => {
 
-    const { image, touristSpot, shortDescription, location, averageCost, travelTime, totalVisitorPerYear } = signle_card;
+    const { _id, image, touristSpot, shortDescription, location, averageCost, travelTime, totalVisitorPerYear } = signle_card;
 
     return (
         <div>
@@ -40,7 +41,9 @@ const SingleCard = ({ signle_card }) => {
                         <p>{totalVisitorPerYear} Person</p>
                     </div>
                     <div className="card-actions">
-                        <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]">View Details</button>
+                        <Link to={`/addList/${ _id}`}>
+                            <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]">View Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ import MyList from "../components/MyList";
 import AllSpot from "../components/AllSpot";
 import AddList from "../components/AddList";
 import PrivateRoute from "../routes/PrivateRoute";
-import ShowSpotList from "../components/ShowSpotList";
+import SpotDetails from "../components/SpotDetails";
 
 const router = createBrowserRouter([
     {
@@ -46,12 +46,12 @@ const router = createBrowserRouter([
             {
                 path: "/add_list",
                 element: <PrivateRoute><AddList></AddList></PrivateRoute>
-            }, 
-            // {
-            //     path: "/show_spot_list",
-            //     element: <ShowSpotList></ShowSpotList>,
-            //     // loader: () => fetch("http://localhost:5000/addList")
-            // }
+            },
+            {
+                path: "/addList/:id",
+                element: <SpotDetails></SpotDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/addList/${params.id}`)
+            }
         ]
     },
 ]);
