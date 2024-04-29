@@ -6,8 +6,6 @@ const AddList = () => {
 
     document.title = "TourLand - Add Tourist Spots"
 
-    const [addList, setAddList] = useState("");
-
     const handleAddList = event => {
         event.preventDefault();
 
@@ -36,7 +34,9 @@ const AddList = () => {
             body:JSON.stringify(addList)
         })
             .then(res => res.json())
-            .then(data => { 
+            .then(data => {
+                
+
                 if (data.insertedId) { 
                     Swal.fire({
                         title: "Done!",
@@ -45,7 +45,6 @@ const AddList = () => {
                     });
                 }
             })
-        setAddList("");
     }
 
     return (
