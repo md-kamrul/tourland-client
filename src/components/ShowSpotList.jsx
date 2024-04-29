@@ -8,7 +8,7 @@ const ShowSpotList = () => {
     return (
         <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {
-                show_spot_list.map(signle_card => <SingleCard key={signle_card._id} signle_card={signle_card}></SingleCard>)
+                show_spot_list.slice(0, 6).map(signle_card => <SingleCard key={signle_card._id} signle_card={signle_card}></SingleCard>)
             }
         </div>
     );
