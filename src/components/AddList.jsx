@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Navbar from "./Navbar";
+import Swal from 'sweetalert2'
 
 const AddList = () => {
 
     document.title = "TourLand - Add Tourist Spots"
+
+    const [addList, setAddList] = useState("");
 
     const handleAddList = event => {
         event.preventDefault();
@@ -22,6 +26,26 @@ const AddList = () => {
         const addList = { image, shortDescription, touristSpot, country, location, averageCost, seasonality, travelTime, totalVisitorPerYear };
 
         console.log(addList);
+
+        // send data to the server
+        fetch("http://localhost:5000/addList", {
+            method: "POST",
+            headers: {
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(addList)
+        })
+            .then(res => res.json())
+            .then(data => { 
+                if (data.insertedId) { 
+                    Swal.fire({
+                        title: "Done!",
+                        text: `You successfully added a tourist spot...`,
+                        icon: "success"
+                    });
+                }
+            })
+        setAddList("");
     }
 
     return (
@@ -73,7 +97,7 @@ const AddList = () => {
                             <label className="label">
                                 <span className="label-text text-[#f8fbff]">Seasonality</span>
                             </label>
-                            <input type="text" placeholder="Seasonality" className="input input-bordered" name="seasonality" required />
+                            <input type="text" placeholder="Seasonality (Example: Summer, Winter)" className="input input-bordered" name="seasonality" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
