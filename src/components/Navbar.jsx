@@ -37,7 +37,16 @@ const Navbar = () => {
         {
             user ?
                 <li><NavLink to="/profile">
-                    <CgProfile className="text-3xl" data-tooltip-id="my-tooltip-inline" data-tooltip-content={`${ user.displayName}`} />
+
+                    {
+                        user.photoURL ?
+                            <img className="w-[38px] rounded-full" src={`${user.photoURL}`} alt="" data-tooltip-id="my-tooltip-inline" data-tooltip-content={`${user.displayName}`} />
+                            :
+                            <CgProfile className="text-3xl" data-tooltip-id="my-tooltip-inline" data-tooltip-content={`${user.displayName}`} />
+                    }
+
+                    {/* <CgProfile className="text-3xl" data-tooltip-id="my-tooltip-inline" data-tooltip-content={`${user.displayName}`} /> */}
+
                 </NavLink></li>
                 :
                 <li><NavLink to="/register">Register</NavLink></li>
