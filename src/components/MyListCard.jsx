@@ -3,6 +3,8 @@ import { AiFillDollarCircle } from "react-icons/ai";
 import { IoTimeSharp } from "react-icons/io5";
 import { BsPeopleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { FaEdit, FaEye } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 const MyListCard = ({ signle_card, userEmail }) => {
 
@@ -50,26 +52,17 @@ const MyListCard = ({ signle_card, userEmail }) => {
                             </div>
                             <div className="card-actions">
 
-                                {
-                                    profileEmail ?
-                                        <div className="flex justify-between gap-2">
-                                            <Link to={`/addList/${_id}`}>
-                                                <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]">View Details</button>
-                                            </Link>
-                                            <Link to={`/addList/${_id}`}>
-                                                <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]">View Details</button>
-                                            </Link>
-                                            <Link to={`/addList/${_id}`}>
-                                                <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]">View Details</button>
-                                            </Link>
-                                        </div>
-                                        :
-                                        <div>
-                                            <Link to={`/addList/${_id}`}>
-                                                <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]">View Details</button>
-                                            </Link>
-                                        </div>
-                                }
+                                <div className="flex justify-between gap-2">
+                                    <Link to={`/addList/${_id}`}>
+                                        <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]"><FaEdit className="text-lg" /></button>
+                                    </Link>
+                                    <Link to={`/addList/${_id}`}>
+                                        <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]"><FaEye className="text-lg" /></button>
+                                    </Link>
+                                    <Link to={`/addList/${_id}`}>
+                                        <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]"><MdDelete className="text-lg" /></button>
+                                    </Link>
+                                </div>
 
                             </div>
                         </div>
@@ -78,7 +71,7 @@ const MyListCard = ({ signle_card, userEmail }) => {
                     :
 
                     <span>
-                        
+
                     </span>
             }
         </div>
