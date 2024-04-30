@@ -36,7 +36,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "/my_list",
-                element: <PrivateRoute><MyList></MyList></PrivateRoute>
+                element: <PrivateRoute><MyList></MyList></PrivateRoute>,
+                loader: () => fetch("http://localhost:5000/addList")
             },
             {
                 path: "/all_spot",
