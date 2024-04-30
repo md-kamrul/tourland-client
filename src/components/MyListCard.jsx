@@ -84,7 +84,7 @@ const MyListCard = ({ signle_card, userEmail }) => {
                             <div className="card-actions">
 
                                 <div className="flex justify-between gap-2">
-                                    <Link to={`/addList/${_id}`}>
+                                    <Link to={`/spot_update/${_id}`}>
                                         <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]"><FaEdit className="text-lg" /></button>
                                     </Link>
                                     <Link to={`/addList/${_id}`}>
