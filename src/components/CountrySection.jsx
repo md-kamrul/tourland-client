@@ -6,7 +6,7 @@ const CountrySection = () => {
                     Bangladesh
                 </div>
                 <div>
-                    <img className="rounded-lg opacity-80" src="/src/assets/countrySection/country_bangladesh.jpg" alt="bangladesh" />
+                    <img className="rounded-lg opacity-80" src="https://i.ibb.co/JtqvLv5/country-bangladesh.jpg" alt="bangladesh" />
                 </div>
             </div>
             <div className="flex items-center justify-center cursor-pointer static cambodia">
@@ -14,7 +14,7 @@ const CountrySection = () => {
                     Cambodia
                 </div>
                 <div>
-                    <img className="rounded-lg opacity-80" src="/src/assets/countrySection/country_cambodia.jpg" alt="combodia" />
+                    <img className="rounded-lg opacity-80" src="https://i.ibb.co/3NHsVxf/country-cambodia.jpg" alt="combodia" />
                 </div>
             </div>
             <div className="flex items-center justify-center cursor-pointer static indonesia">
@@ -22,7 +22,7 @@ const CountrySection = () => {
                     Indonesia
                 </div>
                 <div>
-                    <img className="rounded-lg opacity-80" src="/src/assets/countrySection/country_indonesia.jpg" alt="indonesia" />
+                    <img className="rounded-lg opacity-80" src="https://i.ibb.co/qNDXRrs/country-indonesia.jpg" alt="indonesia" />
                 </div>
             </div>
             <div className="flex items-center justify-center cursor-pointer static malaysia">
@@ -30,7 +30,7 @@ const CountrySection = () => {
                     Malaysia
                 </div>
                 <div>
-                    <img className="rounded-lg opacity-80" src="/src/assets/countrySection/country_malaysia.jpg" alt="malaysia" />
+                    <img className="rounded-lg opacity-80" src="https://i.ibb.co/PhgqS2p/country-malaysia.jpg" alt="malaysia" />
                 </div>
             </div>
             <div className="flex items-center justify-center cursor-pointer static thailand">
@@ -38,7 +38,7 @@ const CountrySection = () => {
                     Thailand
                 </div>
                 <div>
-                    <img className="rounded-lg opacity-80" src="/src/assets/countrySection/country_thailand.jpg" alt="thailand" />
+                    <img className="rounded-lg opacity-80" src="https://i.ibb.co/S7HC1Bb/country-thailand.jpg" alt="thailand" />
                 </div>
             </div>
             <div className="flex items-center justify-center cursor-pointer static vietnam">
@@ -46,7 +46,7 @@ const CountrySection = () => {
                     Vietnam
                 </div>
                 <div>
-                    <img className="rounded-lg opacity-80" src="/src/assets/countrySection/country_vietnam.jpeg" alt="vietnam" />
+                    <img className="rounded-lg opacity-80" src="https://i.ibb.co/gPNr0qd/country-vietnam.jpg" alt="vietnam" />
                 </div>
             </div>
         </div>
