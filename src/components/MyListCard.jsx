@@ -48,7 +48,7 @@ const MyListCard = ({ signle_card, userEmail }) => {
     }
 
     return (
-        <div>
+        <>
             {
                 profileEmail ?
                     <div className="card bg-[#4d95a7] border border-[#4d95a7] bg-opacity-30">
@@ -100,11 +100,11 @@ const MyListCard = ({ signle_card, userEmail }) => {
 
                     :
 
-                    <span>
+                    <>
 
-                    </span>
+                    </>
             }
-        </div>
+        </>
     );
 };
 
