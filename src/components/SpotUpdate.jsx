@@ -1,12 +1,49 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "./Navbar";
+import Swal from "sweetalert2";
 
 const SpotUpdate = () => {
 
     const SpotDetails = useLoaderData();
+    const email = SpotDetails.email
+    const _id = SpotDetails._id
 
     const handleUpdateSpot = event => {
         event.preventDefault();
+
+        const form = event.target;
+
+        const image = form.image.value;
+        const shortDescription = form.shortDescription.value;
+        const touristSpot = form.touristSpot.value;
+        const country = form.country.value;
+        const location = form.location.value;
+        const averageCost = form.averageCost.value;
+        const seasonality = form.seasonality.value;
+        const travelTime = form.travelTime.value;
+        const totalVisitorPerYear = form.totalVisitorPerYear.value;
+
+        const updateInfo = { email, image, shortDescription, touristSpot, country, location, averageCost, seasonality, travelTime, totalVisitorPerYear };
+
+        // update data to the server
+        fetch(`http://localhost:5000/addList/${_id}`, {
+            method: "PUT",
+            headers: {
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(updateInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+
+                if (data.insertedId) { 
+                    Swal.fire({
+                        title: "Done!",
+                        text: `You successfully added a tourist spot...`,
+                        icon: "success"
+                    });
+                }
+            })
     }
 
     return (
