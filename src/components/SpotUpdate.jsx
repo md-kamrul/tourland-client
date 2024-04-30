@@ -29,14 +29,13 @@ const SpotUpdate = () => {
         fetch(`http://localhost:5000/addList/${_id}`, {
             method: "PUT",
             headers: {
-                "content-type":"application/json"
+                "content-type": "application/json"
             },
-            body:JSON.stringify(updateInfo)
+            body: JSON.stringify(updateInfo)
         })
             .then(res => res.json())
             .then(data => {
-
-                if (data.insertedId) { 
+                if (data.modifiedCount) {
                     Swal.fire({
                         title: "Done!",
                         text: `You successfully added a tourist spot...`,
