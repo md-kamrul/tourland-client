@@ -5,6 +5,7 @@ import { BsPeopleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { FaEdit, FaEye } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import Swal from 'sweetalert2'
 
 const MyListCard = ({ signle_card, userEmail }) => {
 
@@ -15,6 +16,36 @@ const MyListCard = ({ signle_card, userEmail }) => {
         profileEmail = userEmail;
     }
 
+    const handleDelete = id => {
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // console.log(id);
+                fetch(`http://localhost:5000/addList/${_id}`, {
+                    method:"DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "The card has been deleted. Please reload the page.",
+                                icon: "success"
+                            });
+                        }
+                    })
+            }
+        });
+
+    }
 
     return (
         <div>
@@ -59,9 +90,8 @@ const MyListCard = ({ signle_card, userEmail }) => {
                                     <Link to={`/addList/${_id}`}>
                                         <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]"><FaEye className="text-lg" /></button>
                                     </Link>
-                                    <Link to={`/addList/${_id}`}>
-                                        <button className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]"><MdDelete className="text-lg" /></button>
-                                    </Link>
+                                    <button onClick={() => handleDelete(_id)}
+                                        className="btn bg-[#4d95a7] text-[#000e25] border hover:border-[#4d95a7] border-[#4d95a7] hover:bg-opacity-50 hover:bg-[#4d95a7] hover:text-[#f8fbff]"><MdDelete className="text-lg" /></button>
                                 </div>
 
                             </div>

@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addList/:id",
-                element: <SpotDetails></SpotDetails>,
+                element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/addList/${params.id}`)
             }
         ]
