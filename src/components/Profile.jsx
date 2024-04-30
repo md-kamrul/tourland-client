@@ -4,6 +4,8 @@ import { AuthContext } from "../firebase/AuthProvider";
 
 const Profile = () => {
 
+    document.title = "TourLand - Profile"
+
     const userInfo = useContext(AuthContext);
     console.log(userInfo);
 
@@ -30,10 +32,6 @@ const Profile = () => {
                 <div className="mb-5 flex gap-2 flex-col md:flex-row justify-center">
                     <span className="text-[#4d95a7]">Last Sign In: </span>
                     <p>{userInfo.user.metadata.lastSignInTime}</p>
-                </div>
-                <div className="mb-5">
-                    <span className="text-[#4d95a7]">Phone Number: </span>
-                    <input className="bg-[#000e25] p-2 rounded-md ml-3 pl-5 border border-[#4d95a7]" type="text" name="userName" defaultValue={userInfo.user.phoneNumber} />
                 </div>
 
                 <button className="btn bg-[#4d95a7] border border-[#4d95a7] text-[#f8fbff] hover:bg-[##f8fbff] hover:border-[#f8fbff] hover:text-[#4d95a7] mt-5">Update Profile</button>

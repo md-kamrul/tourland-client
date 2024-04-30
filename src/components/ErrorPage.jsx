@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
 
+    document.title = "TourLand - Error"
+
     return (
         <div className="bg-[#000e25] w-full h-screen">
 

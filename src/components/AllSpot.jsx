@@ -4,6 +4,8 @@ import SingleCard from "./SingleCard";
 
 const AllSpot = () => {
 
+    document.title = "TourLand - All Tourist Spots"
+
     const show_spot_list = useLoaderData();
 
     return (
