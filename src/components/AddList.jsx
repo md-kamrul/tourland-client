@@ -26,7 +26,7 @@ const AddList = () => {
         console.log(addList);
 
         // send data to the server
-        fetch("http://localhost:5000/addList", {
+        fetch("https://tourism-server-coral.vercel.app/addList", {
             method: "POST",
             headers: {
                 "content-type":"application/json"

@@ -29,7 +29,7 @@ const MyListCard = ({ signle_card, userEmail }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // console.log(id);
-                fetch(`http://localhost:5000/addList/${_id}`, {
+                fetch(`https://tourism-server-coral.vercel.app/addList/${_id}`, {
                     method:"DELETE"
                 })
                     .then(res => res.json())

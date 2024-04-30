@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch("http://localhost:5000/addList")
+                loader: () => fetch("https://tourism-server-coral.vercel.app/addList")
             },
             {
                 path: "/login",
@@ -38,12 +38,12 @@ const router = createBrowserRouter([
             {
                 path: "/my_list",
                 element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-                loader: () => fetch("http://localhost:5000/addList")
+                loader: () => fetch("https://tourism-server-coral.vercel.app/addList")
             },
             {
                 path: "/all_spot",
                 element: <AllSpot></AllSpot>,
-                loader: () => fetch("http://localhost:5000/addList")
+                loader: () => fetch("https://tourism-server-coral.vercel.app/addList")
             },
             {
                 path: "/add_list",
@@ -52,12 +52,12 @@ const router = createBrowserRouter([
             {
                 path: "/addList/:id",
                 element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/addList/${params.id}`)
+                loader: ({ params }) => fetch(`https://tourism-server-coral.vercel.app/addList/${params.id}`)
             },
             {
                 path: "/spot_update/:id",
                 element: <PrivateRoute><SpotUpdate></SpotUpdate></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/addList/${params.id}`)
+                loader: ({ params }) => fetch(`https://tourism-server-coral.vercel.app/addList/${params.id}`)
             }
         ]
     },

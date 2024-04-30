@@ -26,7 +26,7 @@ const SpotUpdate = () => {
         const updateInfo = { email, image, shortDescription, touristSpot, country, location, averageCost, seasonality, travelTime, totalVisitorPerYear };
 
         // update data to the server
-        fetch(`http://localhost:5000/addList/${_id}`, {
+        fetch(`https://tourism-server-coral.vercel.app/addList/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
