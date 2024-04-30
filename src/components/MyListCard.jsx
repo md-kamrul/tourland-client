@@ -10,7 +10,7 @@ import Swal from 'sweetalert2'
 const MyListCard = ({ signle_card, userEmail }) => {
 
     const { _id, image, touristSpot, shortDescription, location, averageCost, travelTime, totalVisitorPerYear, email } = signle_card;
-    // console.log(email);
+
     var profileEmail;
     if (email === userEmail) {
         profileEmail = userEmail;
